@@ -10,6 +10,7 @@
     <td>{{$product->id}}</td>
     <td>{{$product->name}}</td>
     <td>{{$product->description}}</td>
+    <td>{{$product->Category->name)}}</td>
     <td>{{$product->price}}</td>
     <td>{{$product->stock}}</td>
     <td> <a href="{{route('product.edit',$product->id)}}">Editar</a> </td>
