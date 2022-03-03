@@ -1,0 +1,33 @@
+Comandos
+
+php Artisan make:migration create_products_table = cria uma migration
+
+php artisan migrate = migra tudo que está na migration
+
+php artisan make:model    = cria uma model
+
+php artisan make:controller = Cria uma controller
+
+a View precisa ser criada na mão. (pelo menos até agora não foi ensinado como criar pelo prompt)
+
+
+Ordem para criar:
+
+1. migration 
+2. model
+3. rotas
+4. controler
+5. view
+
+
+esse processo cria um crud de Captação de dados e inserção no banco ou edição.
+
+
+A migrate é para criar as tabelas dentro do banco de dados
+
+A controler faz o controle das rotas
+
+rotes - cria sa rotas de get/post/put
+
+
+Sabado irei pesquisar e entender melhor de view/controler/rote/model
