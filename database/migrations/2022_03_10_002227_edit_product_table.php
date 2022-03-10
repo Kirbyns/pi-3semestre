@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-      Schema::table('products',function(Blueprint $table){
-        $table->integer('category_id');
-      });
-
+        Schema::table('products',function(Blueprint $table){
+            $table->softDeletes();
+          });
     }
 
     /**
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        $table-dropColumn('category_id');
+        $table-dropColumn('deleted_at');
     }
 };

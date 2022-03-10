@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
+
 
 class ProductController extends Controller
 {
@@ -11,7 +13,7 @@ class ProductController extends Controller
         return view('product.index')->with('products',Product::all());
     }
     public function create(){
-        return view ('product.create');
+        return view ('product.create')->with('categories',Category::all());
     }
 
     public function store (Request $request){
@@ -28,7 +30,7 @@ class ProductController extends Controller
 
     }
     public function edit(Product $product){
-        return view('product.edit')->with('product',$product);
+        return view('product.edit')->with('product',$product)->with('categories',Category::all()); //quando tiver dois with pode declarar assim tambem : with(['product' => $product, etc..])
 
 
     }
@@ -39,6 +41,20 @@ class ProductController extends Controller
 
 
     }
+    public function trash(){
+        return view('product.trash')->with('products',Product::onlyTrashed()->get());
+    }
 
+    public function restore( $product_id){
+        $product = Product::onlyTrashed()->where('id', $product_id)->first();
+        $product->restore();
+        session()->flash('sucess', 'Produto restaurado com sucesso');
+        return redirect(route('product.index'));
 
 }
+
+}
+
+
+
+

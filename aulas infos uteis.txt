@@ -13,11 +13,16 @@ a View precisa ser criada na mão. (pelo menos até agora não foi ensinado como cr
 
 Ordem para criar:
 
-1. migration 
-2. model
-3. rotas
-4. controler
+
+1. migration (category)
+2. rota
+3. controller(categoryController)
+4. model
 5. view
+
+
+
+
 
 
 esse processo cria um crud de Captação de dados e inserção no banco ou edição.
@@ -31,3 +36,7 @@ rotes - cria sa rotas de get/post/put
 
 
 Sabado irei pesquisar e entender melhor de view/controler/rote/model
+
+
+
+Na blade.php quando é colocado o name="" é necessario ser o mesmo nome da coluna no banco de dados, tive um problema no arquivo produtos/edit.blade.php
